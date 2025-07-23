@@ -20,17 +20,23 @@ export default function Hero({ restaurantInfo }: HeroProps) {
   };
 
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900">
-      {/* Background Image */}
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Background with Food Texture */}
       <div className="absolute inset-0">
         <Image
-          src={restaurantInfo.heroImage}
-          alt={`${restaurantInfo.name} restaurant interior`}
+          src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&auto=format&fit=crop&q=60"
+          alt="Middle Eastern spices and ingredients"
           fill
-          className="object-cover"
+          className="object-cover opacity-30"
           priority
         />
-        <div className="absolute inset-0 bg-black/60"></div>
+        {/* Gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-900/80 via-orange-900/70 to-yellow-900/60"></div>
+        {/* Subtle pattern overlay */}
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='m0 40 40-40v40z'/%3E%3Cpath d='m40 40v-40l-40 40z'/%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '40px 40px'
+        }}></div>
       </div>
 
       {/* Content */}
